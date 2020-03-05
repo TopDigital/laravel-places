@@ -1,0 +1,40 @@
+{
+    "name": "topdigital/laravel-places",
+    "description": "Laravel Places module",
+    "authors": [
+        {
+            "name": "Sergey Sobolev",
+            "email": "soberzerg@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.2",
+        "fideloper/proxy": "^4.0",
+        "laravel/framework": "^6.2",
+        "laravel/tinker": "^2.0",
+        "topdigital/laravel-auth": "dev-dev",
+        "spatie/laravel-medialibrary": "^7.0.0"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "^1.4"
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/TopDigital/laravel-auth.git"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "TopDigital\\Places\\PlacesServiceProvider"
+            ]
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "TopDigital\\Places\\": "src/",
+            "TopDigital\\Places\\Seeders\\": "database/seeds/"
+        }
+    }
+}
