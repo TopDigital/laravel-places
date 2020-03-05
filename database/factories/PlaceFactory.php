@@ -23,8 +23,8 @@ $factory->define(\TopDigital\Places\Models\Place::class, function (Faker $faker)
         'description' => $faker->sentence,
         'preview_url' => $faker->imageUrl(),
         'phones' => [
-            '+7'. $faker->randomNumber(10),
-            '+7'. $faker->randomNumber(10)
+            $faker->numerify('+7 (###) ###-####'),
+            $faker->numerify('+7 (###) ###-####'),
         ],
         'timetable' => [
             [

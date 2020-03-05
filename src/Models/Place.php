@@ -23,6 +23,7 @@ class Place extends Model
     ];
 
     protected $casts = [
+        'location' => PointCast::class,
         'phones' => 'array',
         'timetable' => 'array',
     ];
