@@ -19,7 +19,7 @@ class Place extends Model
     ];
 
     protected $hidden = [
-        'description', 'phones', 'timetable',
+        'location', 'description', 'phones', 'timetable',
     ];
 
     protected $casts = [
