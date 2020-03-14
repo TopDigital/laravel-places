@@ -4,6 +4,7 @@ namespace TopDigital\Places\Models;
 
 
 use Illuminate\Contracts\Database\Eloquent\CastsAttributes;
+use MStaack\LaravelPostgis\Geometries\Point;
 
 class PointCast implements CastsAttributes
 {
@@ -18,7 +19,7 @@ class PointCast implements CastsAttributes
      */
     public function get($model, $key, $value, $attributes)
     {
-        return explode(' ', trim(preg_replace('/[^\d\-]+/', ' ', $value)));
+        return $value;
     }
 
     /**
@@ -32,6 +33,6 @@ class PointCast implements CastsAttributes
      */
     public function set($model, $key, $value, $attributes)
     {
-        return `POINT($value[0], $value[0])`;
+        return new Point($value[0], $value[1]);
     }
 }

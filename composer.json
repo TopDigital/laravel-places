@@ -13,7 +13,8 @@
         "laravel/framework": "^7.0",
         "laravel/tinker": "^2.0",
         "topdigital/laravel-auth": "dev-dev",
-        "spatie/laravel-medialibrary": "^7.0.0"
+        "spatie/laravel-medialibrary": "^7.0.0",
+        "mstaack/laravel-postgis": "^5.0"
     },
     "require-dev": {
         "fzaninotto/faker": "^1.4"

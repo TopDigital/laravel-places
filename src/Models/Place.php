@@ -4,11 +4,11 @@ namespace TopDigital\Places\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use MStaack\LaravelPostgis\Eloquent\PostgisTrait;
 
 class Place extends Model
 {
-    use SoftDeletes;
-
+    use SoftDeletes, PostgisTrait;
     /**
      * The attributes that are mass assignable.
      *
@@ -26,5 +26,16 @@ class Place extends Model
         'location' => PointCast::class,
         'phones' => 'array',
         'timetable' => 'array',
+    ];
+
+    protected $postgisFields = [
+        'location',
+    ];
+
+    protected $postgisTypes = [
+        'location' => [
+            'geomtype' => 'geography',
+            'srid' => 4326
+        ],
     ];
 }
